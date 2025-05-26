@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação Problema</title>
+</head>
+
+<body>
+    <script>
+
+        // não diria que eu gosto fazer desse jeito :P
+        var alunos = [
+            "José",
+            "Cleber",
+            "Fernanda",
+            "Marcos",
+            "Leandro",
+            "Paulo",
+            "Carlos",
+            "Lúcia",
+            "Ana",
+            "Carla",
+            "Kauã",
+            "Herbert Richers",
+            "Lebron James",
+            "Maria",
+            "Fernando",
+            "Paula",
+            "Gabriel",
+            "Renan",
+            "Carolina",
+            "Pedro"
+        ];
+
+        var turmas = [
+            "8º ano",
+            "9º ano",
+            "2ª série",
+            "6º ano",
+            "3ª série",
+            "1ª série",
+            "7º ano",
+            "7º ano",
+            "1ª série",
+            "5º ano",
+            "9º ano",
+            "9º ano",
+            "3ª série",
+            "1ª série",
+            "3ª série",
+            "7º ano",
+            "7º ano",
+            "5º ano",
+            "2ª série",
+            "2ª série"
+        ]
+
+        // OBS: notas devem ser números inteiros, ex: 6.3 seria 63
+        var notas1tri = [
+            60,
+            98,
+            21,
+            75,
+            88,
+            74,
+            99,
+            96,
+            78,
+            65,
+            86,
+            90,
+            47,
+            60,
+            88,
+            96,
+            38,
+            47,
+            45,
+            81
+        ]
+        
+        var notas2tri = [
+            32,
+            82,
+            72,
+            68,
+            90,
+            28,
+            15,
+            82,
+            62,
+            19,
+            91,
+            59,
+            4,
+            77,
+            44,
+            52,
+            61,
+            72,
+            65,
+            99
+        ]
+
+        var notas3tri = [
+            88,
+            80,
+            56,
+            82,
+            4,
+            59,
+            58,
+            97,
+            27,
+            41,
+            77,
+            78,
+            49,
+            47,
+            20,
+            40,
+            15,
+            51,
+            68,
+            47
+        ]
+
+        document.write(
+            "<table border=1>" +
+                "<tr>" +
+                    "<th>Nome</th>" +
+                    "<th>Turma</th>" +
+                    "<th>1º Trimestre</th>" +
+                    "<th>2º Trimestre</th>" +
+                    "<th>3º Trimestre</th>" +
+                    "<th>Nota Total</th>" +
+                    "<th>Nota Média</th>" +
+                    "<th>Aprovado</th>" +
+                "</tr>"
+        );
+        for (let i = 0; i < alunos.length; i++) {
+            let aprovado = notas1tri[i] + notas2tri[i] + notas3tri[i];
+            let media = Math.round(aprovado / 3)
+
+            document.write(
+                "<tr>" +
+                    "<th>"+alunos[i]+"</th>" +
+                    "<th>"+turmas[i]+"</th>" +
+                    "<th>" + (notas1tri[i]/10) + "</th>" +
+                    "<th>" + (notas2tri[i]/10) + "</th>" +
+                    "<th>" + (notas3tri[i]/10) + "</th>" +
+                    "<th>" + (aprovado/10) + "</th>" +
+                    "<th>" + (media/10) + "</th>" +
+                    "<th>"+ (aprovado >= 180 && "Sim" || "Não") + "</th>" +
+                "</tr>"
+            );
+        }
+        document.write("</table>");
+    </script>
+</body>
+
+</html>
